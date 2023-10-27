@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option go_package = "grpc-go/protogen/basic";
+
+message User {
+    uint32 id = 1;
+    string username = 2;
+    bool is_active = 3;
+    bytes password = 4;
+}
