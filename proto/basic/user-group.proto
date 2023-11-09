@@ -1,1 +1,13 @@
-syntax "proto3"
+syntax = "proto3";
+
+import "proto/basic/user.proto";
+
+option go_package = "grpc-go/protogen/basic";
+
+message UserGroup{
+  uint32 group_id = 1 [json_name = "group_id"];
+  string group_name = 2 [json_name = "group_name"];
+  repeated string roles = 3;
+  repeated User users = 4;
+  string description = 17;
+}
