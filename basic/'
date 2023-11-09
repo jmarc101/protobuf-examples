@@ -16,7 +16,6 @@ func BasicUser(){
         Emails: []string{"foo@gmail.com", "bar@icloud.com"},
         // Some comment here
         Gender: basic.Gender_GENDER_MALE,
-        Address: &basic.Address{Street: "Foo street", City: "Bar", Country: "Some Country"},
     }  
 
     log.Println(user)
@@ -36,25 +35,4 @@ func ProtoToJsonUser(){
     jsonUser := string(bytesProto)
 
     log.Println(jsonUser)
-}
-
-func JsontoProto(){
-    user := `{
-        "id":99,
-        "username":"Cat women",
-        "is_active":true,
-        "password":"NjU0MzIx",
-        "gender":"GENDER_FEMALE",
-        "emails":["Email@email.com"]
-    }`
-
-    bytes := []byte(user)
-    protoUser := &basic.User{}
-
-    err :=protojson.Unmarshal(bytes, protoUser)
-    if err != nil {
-        log.Println(err)
-    }
-
-    log.Println(protoUser)
 }
