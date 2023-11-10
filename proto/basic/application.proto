@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option go_package = "grpc-go/protogen/basic";
+
+import "proto/basic/first/application.proto";
+import "proto/basic/second/application.proto";
+
+message Application{
+  first.proto.pkg.Application job_application = 1;
+  second.proto.pkg.Application software_application = 2;
+}

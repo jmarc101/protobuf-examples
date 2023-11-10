@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package first.proto.pkg;
+
+option go_package = "grpc-go/protogen/basic/first";
+
+message Application {
+    string job_name = 1;
+    string applicant_name = 2;
+}

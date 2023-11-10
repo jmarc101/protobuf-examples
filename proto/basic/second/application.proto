@@ -1,0 +1,11 @@
+
+syntax = "proto3";
+
+package second.proto.pkg;
+
+option go_package = "grpc-go/protogen/basic/second";
+
+message Application {
+    string software_title= 1;
+    string os = 2;
+}

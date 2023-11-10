@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "google/protobuf/any.proto";
+
 option go_package = "grpc-go/protogen/basic";
 
 // Usually keep enum on top
@@ -15,6 +17,18 @@ message Address {
     string country = 3;
 }
 
+message PaperMail {
+    string adress = 1;
+}
+
+message SocialMedia {
+    string platform = 1;
+}
+
+message InstantMessaging {
+    string phone_number = 1;
+}
+
 message User {
     uint32 id = 1;
     string username = 2;
@@ -23,4 +37,5 @@ message User {
     Gender gender = 5;
     repeated string emails = 6;
     Address address = 7;
+    google.protobuf.Any communication_channel = 8;
 }

@@ -17,5 +17,5 @@ func main() {
 	log.SetFlags(0)
 	log.SetOutput(new(logWriter))
 
-	basic.BasicUserGroup()
+	basic.AnyCommunicationChannel()
 }
