@@ -19,10 +19,13 @@ endif
 .PHONY: protoc
 # (un)comment or add folder that contains proto as required
 protoc:
-	protoc --go_opt=module=${GO_MODULE} --go_out=. \
-	./proto/basic/*.proto \
-	./proto/basic/first/*.proto \
-	./proto/basic/second/*.proto \
+	protoc \
+    -I . -I google/type \
+    --go_opt=module=grpc-go \
+    --go_out=. \
+    ./proto/basic/*.proto \
+    ./proto/basic/first/*.proto \
+    ./proto/basic/second/*.proto
 
 .PHONY: build
 build: clean protoc tidy

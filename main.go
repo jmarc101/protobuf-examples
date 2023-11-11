@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"grpc-go/basic"
+	// "grpc-go/protogen/basic"
 	"log"
 	"time"
 )
@@ -17,5 +18,13 @@ func main() {
 	log.SetFlags(0)
 	log.SetOutput(new(logWriter))
 
-	basic.AnyCommunicationChannel()
+	// basic.BasicHello()
+	// basic.BasicUser()
+	// basic.BasicUserGroup()
+	// basic.AnyCommunicationChannel()
+	// basic.ToProtoBinary()
+	// basic.FromProtoBinary()
+	// basic.ToProtoJsonFile()
+	// basic.FromJsonFileToProto()
+	basic.DownloadedGoogleProtoTypes()
 }

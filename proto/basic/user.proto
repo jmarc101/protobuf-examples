@@ -1,6 +1,9 @@
 syntax = "proto3";
 
 import "google/protobuf/any.proto";
+import "google/protobuf/timestamp.proto";
+import "google/type/date.proto";
+import "google/type/latlng.proto";
 
 option go_package = "grpc-go/protogen/basic";
 
@@ -38,4 +41,12 @@ message User {
     repeated string emails = 6;
     Address address = 7;
     google.protobuf.Any communication_channel = 8;
+    oneof electronic_comm_chan {
+        SocialMedia social_media = 9;
+        InstantMessaging instant_mess = 10;
+    }
+    map<string, uint32> skills = 11;
+    google.protobuf.Timestamp last_login_attempt = 12;
+    google.type.Date birthday = 13;
+    google.type.LatLng position = 14;
 }
